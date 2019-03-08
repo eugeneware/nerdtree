@@ -10,6 +10,7 @@
 
 let s:Creator = {}
 let g:NERDTreeCreator = s:Creator
+let g:NERDTreeClearJumps = 1
 
 " FUNCTION: s:Creator._bindMappings() {{{1
 function! s:Creator._bindMappings()
@@ -196,7 +197,7 @@ function! s:Creator._createTreeWin()
 
     call self._setCommonBufOptions()
 
-    if has('patch-7.4.1925')
+    if has('patch-7.4.1925') && g:NERDTreeClearJumps == 1
         clearjumps
     endif
 
